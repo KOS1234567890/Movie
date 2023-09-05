@@ -1,4 +1,4 @@
-import { HashRouter,Routes,Route,Link ,BrowserRouter} from "react-router-dom";
+import { HashRouter,Routes,Route,Link } from "react-router-dom";
 import './App.scss';
 import Popular from './page/Popular';
 import Top from './page/Top';
