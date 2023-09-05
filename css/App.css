@@ -1,0 +1,106 @@
+h2, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  width: 100%;
+  height: 3rem;
+}
+header nav {
+  background-color: rgba(0, 0, 0, 0.2745098039);
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 3rem;
+}
+header nav a {
+  margin-right: 2.5rem;
+  list-style: none;
+  font-size: large;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  margin: 0;
+}
+main .HomeSlide .SlidePP, main .HomeSlide .SlideTop, main .HomeSlide .SlideUP {
+  overflow: hidden;
+}
+main .HomeSlide .SlidePP article, main .HomeSlide .SlideTop article, main .HomeSlide .SlideUP article {
+  padding-bottom: 0;
+}
+main .HomeSlide .SlidePP article .poster_contents, main .HomeSlide .SlideTop article .poster_contents, main .HomeSlide .SlideUP article .poster_contents {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+main article {
+  background-color: black;
+  width: 100vw;
+  padding: 5rem;
+  padding-bottom: 20rem;
+}
+main article > h2 {
+  padding: 5rem 0 0 3rem;
+  color: white;
+}
+main article .poster_contents {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+main article .poster_contents .poster {
+  width: 20vw;
+  padding: 1rem;
+  display: flex;
+  position: relative;
+}
+main article .poster_contents .poster .poster_img img {
+  display: flex;
+  flex-direction: row;
+}
+main article .poster_contents .poster .poster_img p {
+  color: white;
+  text-align: center;
+}
+main article .poster_contents .poster .poster_img:hover ~ .poster_txtbox {
+  display: block;
+}
+main article .poster_contents .poster .poster_txtbox {
+  z-index: 55;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border: 1px solid white;
+  padding: 1rem;
+  background-color: black;
+  display: none;
+  color: white;
+  padding: 2rem;
+}
+main article .poster_contents .poster .poster_txtbox:nth-child(4n) {
+  z-index: 55;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border: 1px solid white;
+  padding: 1rem;
+  background-color: black;
+  display: none;
+  color: white;
+  padding: 2rem;
+  right: 100%;
+}
+main article .img:hover .poster_txtbox {
+  display: block;
+}

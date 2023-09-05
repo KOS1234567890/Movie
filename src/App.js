@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { HashRouter,Routes,Route,Link } from "react-router-dom";
+import './App.scss';
+import Popular from './page/Popular';
+import Top from './page/Top';
+import Upcoming from './page/Upcoming';
+import Home from './page/Home';
+import Context from './Context'; //데이터 불러올거임
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+      <HashRouter>
+        <header>
+          <nav>
+            <Link to ="/">Home</Link>
+            <Link to ="/Top">최고의 영화</Link>
+            <Link to ="/Popular/#">인기있는 영화</Link>
+            <Link to ="/Upcoming">개봉될 영화</Link>
+          </nav>
+        </header>
+    
+        <main>
+          <Context>
+            <Routes>
+              
+              <Route path='/' element={<Home />}/>
+              <Route path='/Top' element={<Top />}/>
+              <Route path='/Popular/'element={<Popular />}/>
+              <Route path='/Upcoming'element={<Upcoming />}/>
+
+            </Routes>
+          </Context>
+        </main>
+        
+      </HashRouter>
   );
 }
 
