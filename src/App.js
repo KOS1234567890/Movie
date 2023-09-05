@@ -1,4 +1,4 @@
-import { HashRouter,Routes,Route,Link } from "react-router-dom";
+import { HashRouter,Routes,Route,Link ,BrowserRouter} from "react-router-dom";
 import './App.scss';
 import Popular from './page/Popular';
 import Top from './page/Top';
@@ -7,7 +7,7 @@ import Home from './page/Home';
 import Context from './Context'; //데이터 불러올거임
 function App() {
   return (
-   
+    <BrowserRouter basename='/Movie'>
       <HashRouter>
         <header>
           <nav>
@@ -32,6 +32,7 @@ function App() {
         </main>
         
       </HashRouter>
+    </BrowserRouter>
   );
 }
 
