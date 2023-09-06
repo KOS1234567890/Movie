@@ -1,5 +1,6 @@
 import React, { useContext, useEffect,useState } from 'react'
 import {MovieContext} from '../Context'
+import { Link } from 'react-router-dom';
 function Upcoming() {
     const {upcomingMovies}=useContext(MovieContext);
     const [selectedMovie,setSelectedMovie]=useState(null);
@@ -25,19 +26,21 @@ function Upcoming() {
         <h2>개봉예정 </h2>
         <div className='poster_contents'>
             {upcomingMovies.type.map((movie, index) => (
-            <div className='poster' key={index} onClick={()=>handlePosterClick(movie)}>
-                <div className='poster_img'>
-                    <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}></img>
-                    <p>{movie.title}</p>
-                </div>
-                
-                <div className='poster_txtbox'>
-                    <h2>{movie.title}</h2>{/* title */}
-                    <b>{movie.overview}</b>{/* overview */}
-                    <p>{movie.release_date}</p> {/* release_date */}
-                </div>
-                
-            </div>
+                <Link to={`./detail/${movie.id}`}> {/* Detail  */}
+                    <div className='poster' key={index} onClick={()=>handlePosterClick(movie)}>
+                        <div className='poster_img'>
+                            <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}></img>
+                            <p>{movie.title}</p>
+                        </div>
+                        
+                        <div className='poster_txtbox'>
+                            <h2>{movie.title}</h2>{/* title */}
+                            <b>{movie.overview}</b>{/* overview */}
+                            <p>{movie.release_date}</p> {/* release_date */}
+                        </div>
+                        
+                    </div>
+                </Link>
              ))}
         </div>
         

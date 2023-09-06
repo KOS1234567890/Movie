@@ -1,5 +1,6 @@
 import React, { useContext, useEffect ,useState} from 'react'
 import {MovieContext} from '../Context'
+import { Link } from 'react-router-dom';
 function Top(item) {
     const {topMovies}=useContext(MovieContext);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -17,6 +18,7 @@ function Top(item) {
   function handlePosterClick(movie) {
     setSelectedMovie(movie);
   }
+
 
 
   return (
@@ -37,6 +39,7 @@ function Top(item) {
         <h2>TOP 영화 </h2>
         <div className='poster_contents'>
             {topMovies.type.map((movie, index) => (
+          <Link to={`./detail/${movie.id}`}> {/* Detail  */}
             <div className='poster' key={index} onClick={()=>handlePosterClick(movie)}>
                 <div className='poster_img'>
                     <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}></img>
@@ -50,6 +53,7 @@ function Top(item) {
                 </div>
                 
             </div>
+             </Link>
              ))}
         </div>
         

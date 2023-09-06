@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Popular from '../page/Popular';
 import Top from '../page/Top';
 import Upcoming from '../page/Upcoming';
+import Searchmv from './Searchmv';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -14,7 +15,7 @@ function Home() {
     <>
       <main>
         <div className='mainContents'>
-
+          <Searchmv/>
         </div>
         <ul className='HomeSlide'>
           <li className='SlidePP'>

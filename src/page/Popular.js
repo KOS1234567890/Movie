@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {MovieContext} from '../Context' //데이터의 내용이 담긴 MovieContext를 받아주기
+import { Link } from 'react-router-dom';
 function Popular() {
     const {popularMovies}=useContext(MovieContext);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -26,6 +27,7 @@ function Popular() {
         <h2>Popular 영화</h2>
         <div className='poster_contents'>
             {popularMovies.type.map((movie, index) => (
+              <Link to={`./detail/${movie.id}`}> {/* Detail  */}
             <div className='poster'  key={index} onClick={()=>handlePosterClick(movie)}>
                 <div className='poster_img'>
                     <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}></img>
@@ -39,6 +41,7 @@ function Popular() {
                 </div>
                 
             </div>
+            </Link>
              ))}
         </div>
     </article>
