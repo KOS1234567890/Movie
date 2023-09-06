@@ -43,6 +43,7 @@ function Top(item) {
             <div className='poster' key={index} onClick={()=>handlePosterClick(movie)}>
                 <div className='poster_img'>
                     <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}></img>
+                    
                     <p>{movie.title}</p>
                 </div>
                 
